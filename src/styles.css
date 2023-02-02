@@ -1,0 +1,118 @@
+/*template principal pode usar qualquer um dos abaixo
+deeppurple-amber.css
+indigo-pink.css
+pink-bluegrey.css
+purple-green.css
+*/
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.red {
+    color: rgb(227, 94, 107)!important;
+}
+
+.blue {
+    color: rgb(3, 26, 90)!important;
+}
+
+.v-midle {
+    vertical-align: middle; /*alinhamento na vertical*/
+}
+
+.input-size-10 {
+    width: 10%;
+}
+
+.input-size-15 {
+    width: 15%;
+}
+
+.input-size-20 {
+    width: 20%;
+}
+
+.input-size-25 {
+    width: 25%;
+}
+
+.input-size-30 {
+    width: 30%;
+}
+
+.input-size-40 {
+    width: 40%;
+}
+
+.input-size-49 {  
+    width: 49%;
+}
+
+.input-size-48 {  
+    width: 48%;
+}
+
+.input-size-60 {
+    width: 60%;
+}
+
+.input-size-70 {
+    width: 70%;
+}
+
+.input-size-80 {
+    width: 80%;
+}
+
+.input-size-90 {
+    width: 90%;
+}
+
+.input-size-98 {
+    width: 98%;
+}
+
+.input-size-24 {
+    width: 24%;
+}
+
+.marginLeft {
+    margin: 0% 0% 0% 1%!important;
+}
+
+.marginRight {
+    margin: 0% 1% 0% 0%!important;
+}
+
+.marginButonSave {
+    margin: 1% 1% 1% 0%!important;
+}
+
+.marginButoncancel {
+    margin: 10px 15px 10px 5px!important;
+}
+
+.edit > i {
+    color: #939493;
+}
+
+.delete i {
+    color: #0a0203;
+}
+
+/*usado em todos os botões NOVO da tela de crud pra dar distancia entre o botão e o grid de baixo*/
+.btn-novo {
+    margin: 1% 1% 1% 1%!important;
+}
+
+.inpu-pesquisar {    
+    margin: 1% 1% 0px 1%!important;
+}
+
+.margin-table {    
+    margin: 0% 1% 0px 1%!important;
+}
+

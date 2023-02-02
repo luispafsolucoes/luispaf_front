@@ -1,0 +1,25 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Novo Produto</mat-card-title>
+    </span>    
+    <form>
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Nome</mat-label>
+            <input matInput maxlength="50" [(ngModel)]="produto.nome" name="nome" (ngModelChange)="uperCaseAndTrim_nome($event)">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-10 marginLeft">
+            <mat-label>Valor</mat-label>
+            <input matInput maxlength="10" [(ngModel)]="produto.valor" name="valor" (keypress)="onKeypressEvent($event)">
+        </mat-form-field>
+    </form>
+    <span class="marginLeft">
+        <button mat-raised-button  (click)="salvar()" color="primary" class="marginButonSave">
+            Salvar
+        </button>
+        
+        <button mat-raised-button  (click)="cancelar()" class="marginButoncancel">
+            Voltar
+        </button>
+    </span>
+</mat-card>

@@ -1,0 +1,13 @@
+.sidenav a {
+    color: #fff;
+}
+
+/*largura do nav bar*/
+.sidenav i {
+    padding-right: 10px;
+}
+
+.content {
+    padding: 16px;/*espaço da navbar*/
+    background-color: #fff;
+}

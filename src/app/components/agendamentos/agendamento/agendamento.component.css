@@ -1,0 +1,31 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #ced5dd;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+}
+
+.marginLeftLogin {
+    margin: 1% 1% 1% 1%!important;
+}
+
+.mat-datepicker-input {
+    width: 85%;
+}
+
+mat-icon {
+    position: relative;
+    float: right;
+    top: -3px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.54);
+}

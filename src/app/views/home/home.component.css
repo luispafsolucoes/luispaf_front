@@ -1,0 +1,14 @@
+.home .title {
+    font-size: 3rem; /*fonte 3 vezes maior q a proporcional do sistema*/
+    font-weight: 300; /*peso da fonte*/
+    line-height: 1.2; /*altura da linha*/
+    background-color: #fff;
+    color: black;
+}
+
+.home .subtitle {
+    font-size: 1.1rem; /*fonte 3 vezes maior q a proporcional do sistema*/
+    font-weight: 10; /*peso da fonte*/
+    background-color: #fff;
+    color: black;
+}

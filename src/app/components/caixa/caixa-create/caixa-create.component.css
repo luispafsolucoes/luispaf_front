@@ -1,0 +1,9 @@
+.blue_negrito_larger {
+    color: rgb(3, 26, 90)!important;
+    font-weight: bold!important;
+    font-size: larger!important;
+}
+
+.marginLeft_ {
+    margin: 0% 0% 0% 10%!important;
+}

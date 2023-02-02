@@ -1,0 +1,25 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Deletar Cidade</mat-card-title>
+    </span>    
+    <form>
+        <mat-form-field class="input-size-49 marginLeft">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" [(ngModel)]="cidade.nome" name="nome" disabled="true">
+        </mat-form-field>
+        
+        <mat-form-field class="input-size-20 marginLeft">
+            <mat-label>UF</mat-label>
+            <input matInput placeholder="UF" [(ngModel)]="cidade.uf" name="uf" disabled="true">
+        </mat-form-field>
+    </form>
+    <span class="marginLeft">
+        <button mat-raised-button  (click)="deletar()" color="accent" class="marginButonSave">
+            Deletar
+        </button>
+        
+        <button mat-raised-button  (click)="cancelar()" class="marginButoncancel">
+            Cancelar
+        </button>
+    </span>
+</mat-card>

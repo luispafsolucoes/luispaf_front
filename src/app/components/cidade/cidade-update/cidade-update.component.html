@@ -1,0 +1,25 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Atualizar Cidade</mat-card-title>
+    </span>    
+    <form>
+        <mat-form-field class="input-size-49 marginLeft">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" [(ngModel)]="cidade.nome" name="nome" (ngModelChange)="uperCaseAndTrim_nome($event)">
+        </mat-form-field>
+        
+        <mat-form-field  class="input-size-20 marginLeft">
+            <mat-label>UF</mat-label>
+            <input matInput placeholder="UF" [(ngModel)]="cidade.uf" name="uf" (ngModelChange)="uperCaseAndTrim_uf($event)">
+        </mat-form-field>
+    </form>
+    <span class="marginLeft">
+        <button mat-raised-button  (click)="atualizar()" color="accent" class="marginButonSave">
+            Atualizar
+        </button>
+        
+        <button mat-raised-button  (click)="cancelar()" class="marginButoncancel">
+            Cancelar
+        </button>
+    </span>
+</mat-card>

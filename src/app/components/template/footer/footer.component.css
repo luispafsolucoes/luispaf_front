@@ -1,0 +1,14 @@
+
+/*Coloca o redape lá em baixo*/
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*aplica a regra apenas no span*/
+.footer > span {
+    font-weight: 300;
+    font-size: 1.1rem;
+}

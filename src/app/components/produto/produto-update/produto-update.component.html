@@ -1,0 +1,25 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Inativar Produto</mat-card-title>
+    </span>    
+    <form>
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Nome</mat-label>
+            <input matInput maxlength="100" [(ngModel)]="produto.nome" name="nome" disabled="true">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-10 marginLeft">
+            <mat-label>Valor</mat-label>
+            <input matInput maxlength="10" [(ngModel)]="produto.valor" name="valor" disabled="true">
+        </mat-form-field>
+    </form>
+    <span class="marginLeft">
+        <button mat-raised-button  (click)="atualizar()" color="accent" class="marginButonSave">
+            Inativar
+        </button>
+        
+        <button mat-raised-button  (click)="cancelar()" class="marginButoncancel">
+            Cancelar
+        </button>
+    </span>
+</mat-card>

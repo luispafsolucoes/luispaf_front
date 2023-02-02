@@ -1,0 +1,86 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Caixa do dia</mat-card-title>
+    </span>    
+    <form>
+
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Total Pacotes do dia</mat-label>
+            <input matInput [(ngModel)]="caixa.totalPacote" name="totalPacote" class="blue_negrito_larger" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Total Produtos do dia</mat-label>
+            <input matInput [(ngModel)]="caixa.totalProduto" name="totalProduto" class="blue_negrito_larger" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Total Caixa do dia</mat-label>
+            <input matInput [(ngModel)]="caixa.totalCaixa" name="totalCaixa" class="blue_negrito_larger" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Status atual do caixa</mat-label>
+            <input matInput [(ngModel)]="caixa.status" name="status" [class]="getClasStatus()" disabled>
+        </mat-form-field>
+
+        <div class="mat-elevation-z4">
+            <table mat-table [dataSource]="caixas" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="totalProduto">
+                    <th mat-header-cell *matHeaderCellDef>Total Produto</th>
+                    <td mat-cell *matCellDef="let row">{{row.totalProduto | currency:'BRL':true:'1.2-2'}}</td>
+                </ng-container>
+                
+                <ng-container matColumnDef="totalPacote">
+                    <th mat-header-cell *matHeaderCellDef>Total Pacote</th>
+                    <td mat-cell *matCellDef="let row">{{row.totalPacote | currency:'BRL':true:'1.2-2'}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="totalCaixa">
+                    <th mat-header-cell *matHeaderCellDef>Total Caixa</th>
+                    <td mat-cell *matCellDef="let row">{{row.totalCaixa | currency:'BRL':true:'1.2-2'}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="dataAbertura">
+                    <th mat-header-cell *matHeaderCellDef>Data Abertura</th>
+                    <td mat-cell *matCellDef="let row">{{row.dataAbertura | date: 'dd/MM/yyyy'}}</td>
+                  </ng-container> 
+                
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef>Status</th>
+                    <td mat-cell *matCellDef="let row">{{row.status}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>Fechar Caixa</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a (click)="fecharCaixaDatasAnteriores(row)" class="edit marginLeft" matTooltip="Fecha o caixa pendente de imediato!">
+                            <i class="material-icons red">
+                              settings_power
+                            </i>
+                        </a>
+                    </td>
+                  </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" [hidden]="caixas.length == 0"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" [hidden]="caixas.length == 0"></tr>
+            </table>
+        </div> 
+
+        <span class="marginLeft">
+            <button mat-raised-button (click)="abrirCaixa()" color="primary" class="marginButonSave"  
+              matTooltip="Abre o caixa do dia e libera o sistema para novas vendas!">
+              Abrir Caixa do dia
+            </button>
+            <button mat-raised-button (click)="fecharCaixaDoDia()" color="accent" class="marginButonSave"
+              matTooltip="#Atenção# Caso o caixa seja fechado, o mesmo só poderá ser aberto no dia seguinte, pois não permite dois caixa aberto no mesmo dia!">
+              Fechar Caixa do dia
+            </button>
+          </span>
+
+    </form>
+</mat-card>  
+
+
+     

@@ -1,0 +1,54 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Atualizar cliente</mat-card-title>
+    </span>    
+    <form>
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Nome</mat-label>
+            <input matInput maxlength="100" [(ngModel)]="cliente.nome" name="nome" (ngModelChange)="uperCaseAndTrim_nome($event)">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-48 marginLeft marginRight">
+            <mat-label>E-mail</mat-label>
+            <input matInput maxlength="100" [(ngModel)]="cliente.email" name="email" (ngModelChange)="trim_nome($event)">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Endereço</mat-label>
+            <input matInput maxlength="100" [(ngModel)]="cliente.endereco" name="endereco" (ngModelChange)="uperCaseAndTrim_endereco($event)">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill"  class="input-size-48 marginLeft marginRight">
+            <mat-label>Cidade</mat-label>
+            <mat-select [(value)]="cliente.codigoCidade">
+              <mat-option *ngFor="let cidade of cidades" [value]="cidade.codigo">
+                {{cidade.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-24 marginLeft">
+            <mat-label>Telefone-1</mat-label>
+            <input matInput maxlength="11" [(ngModel)]="cliente.telefone1" name="telefone1" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-24 marginLeft">
+            <mat-label>Telefone-2</mat-label>
+            <input matInput maxlength="11" [(ngModel)]="cliente.telefone2" name="telefone2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-size-48 marginLeft marginRight">
+            <mat-label>CPF</mat-label>
+            <input matInput maxlength="11" [(ngModel)]="cliente.cpf" name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </mat-form-field>
+    </form>
+    <span class="marginLeft">
+        <button mat-raised-button  (click)="atualizar()" color="accent" class="marginButonSave">
+            Atualizar
+        </button>
+        
+        <button mat-raised-button  (click)="cancelar()" class="marginButoncancel">
+            Cancelar
+        </button>
+    </span>
+</mat-card>

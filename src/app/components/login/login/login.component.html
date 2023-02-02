@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="box">
+        <mat-card>  
+            <form>
+                <mat-form-field appearance="fill" class="input-size-98 marginLeftLogin">
+                    <mat-label>Login</mat-label>
+                    <input matInput maxlength="100" [(ngModel)]="usuario.login" name="login">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="input-size-98 marginLeftLogin">
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="password" maxlength="30" [(ngModel)]="usuario.senha" name="senha">
+                </mat-form-field>
+            </form>
+            <span class="marginLeftLogin">
+                <button mat-raised-button  color="primary" (click)="logar()" class="input-size-98 marginLeftLogin">
+                    Logar
+                </button>
+                
+                <button mat-stroked-button color="primary" (click)="agendar()"  class="input-size-98 marginLeftLogin">
+                    Agendar
+                </button>
+            </span>
+        </mat-card>        
+    </div>
+</div>
+   

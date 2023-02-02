@@ -1,0 +1,24 @@
+<mat-card>
+    <span class="marginLeft">
+        <mat-card-title>Nova Cidade</mat-card-title>
+    </span>    
+    <form>
+        <mat-form-field appearance="fill" class="input-size-49 marginLeft">
+            <mat-label>Nome</mat-label>
+            <input matInput maxlength="100" [(ngModel)]="cidade.nome" name="nome" (ngModelChange)="uperCaseAndTrim_nome($event)">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-size-20 marginLeft">
+            <mat-label>UF</mat-label>
+            <input matInput maxlength="2" [(ngModel)]="cidade.uf" name="uf" (ngModelChange)="uperCaseAndTrim_uf($event)">
+        </mat-form-field>
+    </form>
+    <span class="marginLeft">
+        <button mat-raised-button  (click)="criarCidade()" color="primary" class="marginButonSave">
+            Salvar
+        </button>
+        
+        <button mat-raised-button  (click)="cancelar()" class="marginButoncancel">
+            Voltar
+        </button>
+    </span>
+</mat-card>

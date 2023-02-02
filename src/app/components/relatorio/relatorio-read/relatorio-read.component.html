@@ -1,0 +1,77 @@
+<mat-card>
+    <form>
+        <mat-form-field appearance="fill"  class="input-size-30 marginLeft marginRight">
+            <mat-label>Cliente</mat-label>
+            <mat-select [(value)]="filtroDTO.codigoCliente">
+                <mat-option *ngFor="let cliente of clientes" [value]="cliente.codigo">
+                {{cliente.nome}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="input-size-20 marginLeft">
+            <mat-label>Data Inicio</mat-label>
+            <input class="mat-datepicker-input" matInput [(ngModel)]="filtroDTO.dataInicio" [matDatepicker]="datIni" id="datIni" name="datIni">
+            <mat-icon matDatepickerToggleIcon (click)="limparDataInicio()">X</mat-icon>
+            <mat-datepicker-toggle matSuffix [for]="datIni"></mat-datepicker-toggle>
+            <mat-datepicker disabled="false" #datIni></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="input-size-20 marginLeft">
+            <mat-label>Data Fim</mat-label>
+            <input class="mat-datepicker-input" matInput [(ngModel)]="filtroDTO.dataFim" [matDatepicker]="datFim" id="datFim" name="datFim">
+            <mat-icon matDatepickerToggleIcon (click)="limparDataFim()">X</mat-icon>
+            <mat-datepicker-toggle matSuffix [for]="datFim"></mat-datepicker-toggle>
+            <mat-datepicker disabled="false" #datFim></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-stroked-button  (click)="buscar()" color="primary" class="marginLeft">
+            Buscar
+        </button>
+
+        <a  (click)="limparFiltro()" class="inpu-pesquisar" matTooltip="Limpar filtro" *ngIf="desabilitaLimparFiltra()">
+            <i class="material-icons">
+                delete
+            </i>
+        </a> 
+    </form>
+
+    <div class="mat-elevation-z4">
+        <table mat-table [dataSource]="listRel" class="mat-elevation-z8">
+            
+            <ng-container matColumnDef="qtdeProduto">
+                <th mat-header-cell *matHeaderCellDef>Qtde Pedido</th>
+                <td mat-cell *matCellDef="let row">                    
+                    <a mat-list-item routerLink="#">
+                        {{row.totalProduto}}
+                    </a>
+                </td>   
+            </ng-container>  
+
+            <ng-container matColumnDef="totalproduto">
+                <th mat-header-cell *matHeaderCellDef>Total Padido</th>
+                <td mat-cell *matCellDef="let row">{{row.totalproduto | currency:'BRL':true:'1.2-2'}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="qtdePacote">
+                <th mat-header-cell *matHeaderCellDef>Qtde Pacote</th>
+                <td mat-cell *matCellDef="let row">{{row.totalPacote}}</td>
+            </ng-container> 
+
+            <ng-container matColumnDef="totalpacote">
+                <th mat-header-cell *matHeaderCellDef>Total Pacote</th>
+                <td mat-cell *matCellDef="let row">{{row.totalpacote | currency:'BRL':true:'1.2-2'}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="totalcaixa">
+                <th mat-header-cell *matHeaderCellDef>Total Caixa</th>
+                <td mat-cell *matCellDef="let row">{{row.totalcaixa | currency:'BRL':true:'1.2-2'}}</td>
+            </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" [hidden]="listRel.length == 0"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [hidden]="listRel.length == 0"></tr>
+        </table>
+    </div>    
+</mat-card>  
+
+  

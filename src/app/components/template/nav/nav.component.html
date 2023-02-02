@@ -1,0 +1,77 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64" *ngIf="usuarioLogado()">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/telaPrincipal">
+                <i class="material-icons">
+                    home
+                </i>
+                Inicio
+            </a>
+            <a mat-list-item routerLink="/cidade" matTooltip="Cadastro de cidades">
+                <i class="material-icons">
+                    location_city
+                </i>
+                Cidade
+            </a>
+            <a mat-list-item routerLink="/cliente" matTooltip="Cadastro de clientes">
+                <i class="material-icons">
+                    people
+                </i>
+                Cliente
+            </a>
+            <a mat-list-item routerLink="/produto" matTooltip="Cadastro de produtos">
+                <i class="material-icons">                    
+                    av_timer
+                </i>
+                Produto
+            </a>
+            <a mat-list-item routerLink="/pacote" matTooltip="Cadastro de pacotes">
+                <i class="material-icons">
+                    business_center
+                </i>
+                Pacote
+            </a>
+            <a mat-list-item routerLink="/vproduto" matTooltip="Vendas de produtos do dia">
+                <i class="material-icons">
+                    add_shopping_cart
+                </i>
+                V Dia
+            </a>
+            <a mat-list-item routerLink="/vpacote" matTooltip="Vendas de pacotes do dia">
+                <i class="material-icons">
+                    card_travel
+                </i>
+                P Dia
+            </a>
+            <a mat-list-item routerLink="/caixa" matTooltip="Caixa">
+                <i class="material-icons">
+                    attach_money
+                </i>
+                Caixa
+            </a>
+            <a mat-list-item routerLink="/relatorio" matTooltip="Relatório de caixa">
+                <i class="material-icons">
+                    sort_by_alpha    
+                </i>
+                Relatório
+            </a>
+            <a mat-list-item routerLink="/agendamentoRead" matTooltip="Agenda">
+                <i class="material-icons">
+                    perm_contact_calendar    
+                </i>
+                Agenda
+            </a>
+            <a mat-list-item routerLink="/logout" matTooltip="Sair">
+                <i class="material-icons">
+                    not_interested    
+                </i>
+                Sair
+            </a>            
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

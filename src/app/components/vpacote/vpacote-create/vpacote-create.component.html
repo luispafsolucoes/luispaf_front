@@ -1,0 +1,41 @@
+<mat-card>
+  <span class="marginLeft">
+    <mat-card-title>Nova Venda de Pacote</mat-card-title>
+  </span>
+    <form>
+        <mat-form-field appearance="fill" class="input-size-98 marginLeft">
+            <mat-label>Cliente</mat-label>
+            <mat-select [(value)]="pacotevendido.codigoCliente">
+              <mat-option *ngFor="let cliente of clientesSearch" [value]="cliente.codigo">
+                {{cliente.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="input-size-98 marginLeft">
+            <mat-label>Pacote</mat-label>
+            <mat-select [(value)]="pacotevendido.codigoPacote">
+              <mat-option *ngFor="let pacote of pacotesSearch" [value]="pacote.codigo">
+                {{pacote.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="input-size-48 marginLeft">
+            <mat-label>Validade Pacote</mat-label>
+            <input class="mat-datepicker-input" matInput [(ngModel)]="pacotevendido.validadePacote" [matDatepicker]="datFim" id="datFim" name="datFim">
+            <mat-icon matDatepickerToggleIcon (click)="limparValidadePacote()">X</mat-icon>
+            <mat-datepicker-toggle matSuffix [for]="datFim"></mat-datepicker-toggle>
+            <mat-datepicker disabled="false" #datFim></mat-datepicker>
+          </mat-form-field>
+
+        <button mat-raised-button (click)="salvarPacoteVendido()" color="primary" class="input-size-20 marginLeft">
+          Salvar
+        </button> 
+
+        <button mat-raised-button (click)="cancelar()" class="input-size-20 marginLeft">
+          Voltar
+        </button>
+             
+    </form>
+</mat-card>        
