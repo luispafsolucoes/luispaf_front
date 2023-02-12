@@ -5,7 +5,7 @@ const app = express();
 // nome da pasta no dist que sera feito o build
 const appName = 'luispaf_front';
 // local onde build ira gerar os arquivos
-const outputPath = `${__dirname}/dist/${appName}`;
+const outputPath = `${__dirname}/dist/frontend/${appName}`;
 
 // seta o diretorio de build para servir o conteudo Angular
 app.use(express.static(outputPath));
