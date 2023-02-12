@@ -1,15 +1,13 @@
 {
   "name": "frontend",
   "version": "0.0.0",
-  "engines": {
-    "node": "18.13.0",
-    "npm": "9.3.1"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "deploy:ghdocs": "ng build --prod --output-path docs --base-href /luispaf_front/",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +25,7 @@
     "angular-animate": "^1.8.3",
     "angular-aria": "^1.8.3",
     "angular-material": "^1.2.5",
+    "express": "^4.18.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
