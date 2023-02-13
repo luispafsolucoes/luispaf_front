@@ -8,7 +8,7 @@
             <input matInput maxlength="100" [(ngModel)]="cliente.nome" name="nome" (ngModelChange)="uperCaseAndTrim_nome($event)">
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="input-size-48 marginLeft marginRight">
+        <mat-form-field appearance="fill" class="input-size-48 marginLeft marginLeft">
             <mat-label>E-mail</mat-label>
             <input matInput maxlength="100" [(ngModel)]="cliente.email" name="email" (ngModelChange)="trim_nome($event)">
         </mat-form-field>
@@ -18,7 +18,7 @@
             <input matInput maxlength="100" [(ngModel)]="cliente.endereco" name="endereco" (ngModelChange)="uperCaseAndTrim_endereco($event)">
         </mat-form-field>
 
-        <mat-form-field appearance="fill"  class="input-size-48 marginLeft marginRight">
+        <mat-form-field appearance="fill"  class="input-size-48 marginLeft marginLeft">
             <mat-label>Cidade</mat-label>
             <mat-select [(value)]="cliente.codigoCidade">
               <mat-option *ngFor="let cidade of cidades" [value]="cidade.codigo">
@@ -37,7 +37,7 @@
             <input matInput maxlength="11" [(ngModel)]="cliente.telefone2" name="telefone2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="input-size-48 marginLeft marginRight">
+        <mat-form-field appearance="fill" class="input-size-48 marginLeft marginLeft">
             <mat-label>CPF</mat-label>
             <input matInput maxlength="11" [(ngModel)]="cliente.cpf" name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </mat-form-field>

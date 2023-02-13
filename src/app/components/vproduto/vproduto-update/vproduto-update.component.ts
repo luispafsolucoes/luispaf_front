@@ -54,6 +54,13 @@ export class VprodutoUpdateComponent implements OnInit {
     this.listarProdutosAtivos();
   }
 
+  inativarBotoes() {
+    if (this.pedidoVendido.status != "ABERTO") {
+      return false;
+    } 
+    return true;
+  }
+
   salvarPedido() {
     if (this.produtoSelecionado && this.pedidoVendido.codigo) {
       let itemPedidoVendido: ItemPedidoVendido = new ItemPedidoVendido();

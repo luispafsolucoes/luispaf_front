@@ -3,8 +3,8 @@
     <div class="box">
         <mat-card>  
             <form>
-                <mat-form-field appearance="fill"  class="input-size-98 marginLeftLogin">
-                    <mat-label>Cliente</mat-label>
+                <mat-form-field appearance="fill"  class="input-size-90 marginLeftLogin">
+                    <mat-label>Clientef</mat-label>
                     <mat-select [(value)]="agenda.codigoCliente">
                         <mat-option *ngFor="let cliente of clientes" [value]="cliente.codigo">
                         {{cliente.nome}}
@@ -12,7 +12,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <mat-form-field appearance="fill"  class="input-size-98 marginLeftLogin">
+                <mat-form-field appearance="fill"  class="input-size-90 marginLeftLogin">
                     <mat-label>Tipo Produto</mat-label>
                     <mat-select [(value)]="agenda.tipoproduto">
                         <mat-option *ngFor="let tipoProduto of tiposProduto" [value]="tipoProduto">
@@ -21,7 +21,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <mat-form-field class="input-size-98 marginLeftLogin">
+                <mat-form-field class="input-size-90 marginLeftLogin">
                     <mat-label>Data Agendamento</mat-label>
                     <input class="mat-datepicker-input" matInput [(ngModel)]="agenda.dataAgenda" [matDatepicker]="dataAgenda" id="dataAgenda" name="dataAgenda">
                     <mat-icon matDatepickerToggleIcon (click)="limparDataAgendamento()">X</mat-icon>
@@ -29,7 +29,7 @@
                     <mat-datepicker disabled="false" #dataAgenda></mat-datepicker>
                 </mat-form-field>
 
-                <mat-form-field appearance="fill"  class="input-size-98 marginLeftLogin">
+                <mat-form-field appearance="fill"  class="input-size-90 marginLeftLogin">
                     <mat-label>Horário</mat-label>
                     <mat-select [(value)]="agenda.horario">
                         <mat-option *ngFor="let horario of horarios" [value]="horario">
@@ -39,11 +39,11 @@
                 </mat-form-field>
             </form>
             <span class="marginLeftLogin">
-                <button mat-raised-button  (click)="agendar()" color="primary" class="input-size-98 marginLeftLogin">
+                <button mat-raised-button  (click)="agendar()" color="primary" class="input-size-90 marginLeftLogin">
                     Agendar
                 </button>
                 
-                <button mat-stroked-button (click)="sair()" color="primary"  class="input-size-98 marginLeftLogin">
+                <button mat-stroked-button (click)="sair()" color="primary"  class="input-size-90 marginLeftLogin">
                     Sair
                 </button>
             </span>

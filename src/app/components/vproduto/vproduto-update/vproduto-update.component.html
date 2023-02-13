@@ -3,7 +3,7 @@
         <mat-card-title>Editar Pedido de venda</mat-card-title>
     </span>    
     <form>
-        <mat-form-field appearance="fill" class="input-size-30 marginLeft">
+        <mat-form-field appearance="fill" class="input-size-25 marginLeft">
             <mat-label>Nome</mat-label>
             <input matInput maxlength="100" [(ngModel)]="pedidoVendido.cliente.nome" name="nome" disabled="true">
         </mat-form-field>
@@ -13,7 +13,7 @@
             <input matInput maxlength="10" [(ngModel)]="pedidoVendido.valor" name="valor" disabled="true" matTooltip="Valor total do pedido!">
           </mat-form-field>
 
-        <mat-form-field appearance="fill"  class="input-size-20 marginLeft">
+        <mat-form-field appearance="fill"  class="input-size-20 marginLeft" *ngIf="inativarBotoes()">
             <mat-label>Produto</mat-label>
             <mat-select [(value)]="produtoSelecionado">
               <mat-option *ngFor="let produto of produtos" [value]="produto">
@@ -24,11 +24,11 @@
         
         <span class="marginLeft">
             <button mat-raised-button  (click)="salvarPedido()" color="primary" class="marginButonSave"
-               matTooltip="Salva o novo produto e o pedido continua aberto!">
-              Salvar
+               matTooltip="Salva o novo produto e o pedido continua aberto!" *ngIf="inativarBotoes()">
+              Adicionar
             </button>
             <button mat-raised-button  (click)="finalizarVenda()" color="accent" class="marginButonSave"
-              matTooltip="Finaliza a Venda de imediato!">
+              matTooltip="Finaliza a Venda de imediato!" *ngIf="inativarBotoes()">
                 Finalizar Venda
             </button> 
             <button mat-raised-button (click)="voltar()" class="marginButoncancel">

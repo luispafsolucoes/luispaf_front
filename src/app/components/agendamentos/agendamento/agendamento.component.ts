@@ -110,17 +110,17 @@ export class AgendamentoComponent {
   validaCampos(agenda: Agenda) {
     let ret = true;
     if (!agenda.codigoCliente) {
-      this.agendamentoService.showMessage("CodigoCliente é obrigatório!");
+      this.agendamentoService.showMessage("Cliente é obrigatório!");
       return false;
     }
 
     if (!agenda.tipoproduto) {
-      this.agendamentoService.showMessage("Tipoproduto é obrigatório!");
+      this.agendamentoService.showMessage("Tipo Produto é obrigatório!");
       return false;
     }
 
     if (!agenda.dataAgenda) {
-      this.agendamentoService.showMessage("DataAgenda é obrigatório!");
+      this.agendamentoService.showMessage("Data Agenda é obrigatório!");
       return false;
     }
 
