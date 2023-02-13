@@ -4,7 +4,7 @@
         <mat-card>  
             <form>
                 <mat-form-field appearance="fill"  class="input-size-90 marginLeftLogin">
-                    <mat-label>Clientef</mat-label>
+                    <mat-label>Cliente</mat-label>
                     <mat-select [(value)]="agenda.codigoCliente">
                         <mat-option *ngFor="let cliente of clientes" [value]="cliente.codigo">
                         {{cliente.nome}}
@@ -43,7 +43,7 @@
                     Agendar
                 </button>
                 
-                <button mat-stroked-button (click)="sair()" color="primary"  class="input-size-90 marginLeftLogin">
+                <button mat-stroked-button (click)="sair()" color="primary"  class="input-size-90    marginLeftLogin">
                     Sair
                 </button>
             </span>
