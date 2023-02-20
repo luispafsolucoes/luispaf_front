@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public head: string = "Bem vindo";
+  public head: string = "Bem vindo!";
 
   constructor(
     private localStorage: LocalStorageService,

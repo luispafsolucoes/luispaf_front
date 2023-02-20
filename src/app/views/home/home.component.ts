@@ -12,6 +12,8 @@ import { LocalStorageService } from 'src/app/components/localStorage/local-stora
 })
 export class HomeComponent  implements OnInit {
 
+  dataAtual: Date = new Date();
+
   constructor(
     private localStorage: LocalStorageService,
     private router: Router,
