@@ -132,4 +132,20 @@ export class CaixaService {
       );
     });
   }  
+  
+  public getDataAtual() {
+    debugger;
+    return new Promise((retorno, erro) => {
+      this.http.get(environment.baseUrl + this.PATH + "getDataAtual").subscribe(
+        (dataAtual: string) => {
+          retorno(dataAtual);
+        },
+        (error: any) => {
+          retorno(error.error.text);
+        }
+      );
+    });
+  }
+
+
 }
