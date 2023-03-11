@@ -16,7 +16,15 @@
                 {{status}}
                 </mat-option>
             </mat-select>
-        </mat-form-field>        
+        </mat-form-field>  
+        
+        <mat-form-field class="input-size-20 marginLeft">
+          <mat-label>Data</mat-label>
+          <input class="mat-datepicker-input" matInput [(ngModel)]="pedidoVendidoSearch.dataCriacao" [matDatepicker]="datCreate" id="datCreate" name="datCreate">
+          <mat-icon matDatepickerToggleIcon (click)="limparDataInicio()">X</mat-icon>
+          <mat-datepicker-toggle matSuffix [for]="datCreate"></mat-datepicker-toggle>
+          <mat-datepicker disabled="false" #datCreate></mat-datepicker>
+        </mat-form-field>
     
         <a  (click)="filtrar()" class="inpu-pesquisar" matTooltip="Filtrar">
             <i class="material-icons">
@@ -74,8 +82,8 @@
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [hidden]="carregando"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" [hidden]="pedidosDoDia.length === 0"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [hidden]="pedidosDoDia.length === 0"></tr>
     </table>
 
     <div *ngIf="carregando" class="spinner">

@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute) {}
 
 
-  ngOnInit(): void {} 
+  ngOnInit(): void {
+  } 
 
   logar() {
     debugger;

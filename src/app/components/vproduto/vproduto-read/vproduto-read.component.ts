@@ -48,6 +48,10 @@ export class VprodutoReadComponent  implements OnInit {
     this.buscarClientesSearch();   
   } 
 
+  limparDataInicio() {
+    this.pedidoVendidoSearch.dataCriacao = null;
+  }
+
   montarStatus() {
     let aberto: string = "ABERTO";
     let recebido: string = "RECEBIDO";

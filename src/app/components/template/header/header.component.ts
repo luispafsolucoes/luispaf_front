@@ -16,10 +16,12 @@ export class HeaderComponent implements OnInit {
     private loginService: LoginService
     ) {}
 
-  ngOnInit(): void {  
+  ngOnInit(): void { 
+    this.loginService.usuarioLogado(); 
   } 
 
   usuarioLogado() {
+    debugger;
     if (localStorage.getItem("idUsuarioLogado") != null) {
       return true;
     } else {
