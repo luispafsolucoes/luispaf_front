@@ -45,7 +45,6 @@ export class ClienteDeleteComponent implements OnInit {
   }
 
   listarCidade() {
-    debugger;
     this.cidadeService.listarTodos().then((listagem: any)  => {
       if (listagem && listagem.length > 0) {
         this.cidades = listagem;

@@ -24,7 +24,6 @@ export class ItemPacoteService {
   }
 
   salvar(itemPacoteVendido: ItemPacoteVendido) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "salvar", itemPacoteVendido, {}).subscribe(
         ret => {

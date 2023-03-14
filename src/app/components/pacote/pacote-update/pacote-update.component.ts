@@ -42,7 +42,6 @@ export class PacoteUpdateComponent  implements OnInit {
   }
 
   listar() {  
-    debugger;
     let pacoteSelecionado: Pacote = new Pacote();
     pacoteSelecionado.codigo = this.idParaAlterar;
     this.itemPacoteService.filtrarPage(this.getPageRequest("codigo"), pacoteSelecionado).then((listagem: any)  => {
@@ -61,7 +60,6 @@ export class PacoteUpdateComponent  implements OnInit {
   }
 
   getById(id: number) {
-    debugger;
     let pacoteSearch: Pacote =  new Pacote();
     pacoteSearch.codigo = id;
     this.pacoteService.buscar(pacoteSearch).then((listagem: any)  => {
@@ -74,7 +72,6 @@ export class PacoteUpdateComponent  implements OnInit {
   }
 
   inativarPacote() {
-    debugger;
     this.pacote.dataInativacao = new Date();
     this.pacote.status = "INATIVO";
      this.pacoteService.inativarPacote(this.pacote).then(resposta => {  

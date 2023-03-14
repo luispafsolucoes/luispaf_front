@@ -52,7 +52,6 @@ export class VprodutoCreateComponent implements OnInit {
   }
 
   listarProdutosAtivos() {
-    debugger;
     this.produtoService.listarTodos().then((listagem: any)  => {
       if (listagem && listagem.length > 0) {
         this.produtos = listagem;
@@ -65,7 +64,6 @@ export class VprodutoCreateComponent implements OnInit {
   }
 
   listarClientes() {
-    debugger;
     this.clienteService.listarTodos().then((listagem: any)  => {
       if (listagem && listagem.length > 0) {
         this.clientes = listagem;
@@ -78,7 +76,6 @@ export class VprodutoCreateComponent implements OnInit {
   }
 
   salvarPedido() {
-    debugger;
     this.pedidoVendido.dataCriacao = new Date();
     this.pedidoVendido.produtos = this.produtosSelecionados;
     this.pedidoVendido.status = "ABERTO";
@@ -88,7 +85,6 @@ export class VprodutoCreateComponent implements OnInit {
   }
 
   finalizarVenda() {
-    debugger;
     this.pedidoVendido.dataCriacao = new Date();
     this.pedidoVendido.produtos = this.produtosSelecionados;
     this.pedidoVendido.status = "RECEBIDO";    
@@ -99,7 +95,6 @@ export class VprodutoCreateComponent implements OnInit {
   }
 
   salvar(pedidoVendido: PedidoVendido) {
-    debugger;
     this.vprodutoService.salvar(pedidoVendido).then(resposta => {  
       this.pedidoVendido = new PedidoVendido();
       this.produtoSelecionado = new Produto();
@@ -115,7 +110,6 @@ export class VprodutoCreateComponent implements OnInit {
   }
 
   adicionar() {
-    debugger;
     if (this.produtoSelecionado) {
       this.pedidoVendido.valor = this.pedidoVendido.valor ? Number(this.pedidoVendido.valor) + this.produtoSelecionado.valor :  this.produtoSelecionado.valor;
       this.produtosSelecionados.push(this.produtoSelecionado);

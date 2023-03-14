@@ -30,7 +30,6 @@ export class HomeComponent  implements OnInit {
 
   getDataAtual() {
     this.caixaService.getDataAtual().then((dataAtual: string)  => {
-      debugger;
       this.dataAtualBack = dataAtual
     }).catch(erro => {
       this.caixaService.showMessage("Falha ao buscar total pacote do dia!");

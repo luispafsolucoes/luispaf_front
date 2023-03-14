@@ -73,7 +73,6 @@ export class ProdutoReadComponent implements OnInit {
   }
 
   filtrar() {
-    debugger;
     if (this.produtoSearch.nome || this.produtoSearch.status) {
       this.carregando = true;
       this.produtoService.filtrarPage(this.getPageRequest("nome"), this.produtoSearch).then((listagem: any)  => {

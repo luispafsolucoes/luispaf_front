@@ -56,7 +56,6 @@ export class VitemPedidoService {
     return new Promise((retorno, erro) => {
       this.http.post(url, entity, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {

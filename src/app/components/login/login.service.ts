@@ -55,7 +55,6 @@ export class LoginService {
   }
 
   validarLogin(usuario: Usuario) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "validarLogin", usuario, {}).subscribe(
         ret => {
@@ -69,7 +68,6 @@ export class LoginService {
   }
 
   getUsuario(usuario: Usuario) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "getUsuario", usuario, {}).subscribe(
         ret => {

@@ -29,7 +29,6 @@ export class CidadeDeleteComponent implements OnInit {
     }
 
   deletar() {
-    debugger;
     this.cidadeService.deletar(this.idParaDeletar).then(resposta => {
       this.cidadeService.showMessage('Registro deletado com sucesso!');
       this.router.navigate(['/cidade']);

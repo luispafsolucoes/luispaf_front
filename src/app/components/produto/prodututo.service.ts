@@ -24,11 +24,9 @@ export class ProdututoService {
   }
 
   buscar(produto: Produto) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "filtrar", produto, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -39,11 +37,9 @@ export class ProdututoService {
   }
 
   buscarProdutoPacote(pacote: Pacote) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "buscarProdutoPacote", pacote, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -54,7 +50,6 @@ export class ProdututoService {
   }  
 
   filtrarPage(queryBuilser: QueryBuilder, produto: Produto) {
-    debugger;
     const url = this.getUrlFiltroPage(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
@@ -82,7 +77,6 @@ export class ProdututoService {
     return new Promise((retorno, erro) => {
       this.http.get(url).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -113,7 +107,6 @@ export class ProdututoService {
   }
 
   atualizar(produto: Produto) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "atualizar", produto, {}).subscribe(
         ret => {

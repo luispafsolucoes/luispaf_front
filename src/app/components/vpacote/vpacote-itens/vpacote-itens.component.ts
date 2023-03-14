@@ -81,7 +81,6 @@ export class VpacoteItensComponent implements OnInit {
   }
 
   finalizarItem(itemPacv: ItemPacoteVendido) {
-    debugger;
     itemPacv.dataFim = new Date();
     itemPacv.status = "FINALIZADO";    
     this.pacoteVendidoService.inativarItemPacoteVendido(itemPacv).then((listagem: any)  => {

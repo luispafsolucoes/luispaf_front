@@ -24,7 +24,6 @@ export class CidadeCreateComponent  implements OnInit {
      }
 
   criarCidade(): void {
-    debugger;
     if (this.cidadeService.validaCampos(this.cidade)) {
       this.cidadeService.salvar(this.cidade).then(resposta => {  
       this.cidade = new Cidade(null,null,null);
@@ -40,12 +39,10 @@ export class CidadeCreateComponent  implements OnInit {
   }
 
   uperCaseAndTrim_nome(value: string) {
-    debugger;
     this.cidade.nome = value.trim().toUpperCase();
   }
 
   uperCaseAndTrim_uf(value: string) {
-    debugger;
     this.cidade.uf = value.trim().toUpperCase();
   }
 }

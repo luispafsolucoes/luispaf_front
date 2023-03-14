@@ -25,7 +25,6 @@ export class ProdutoCreateComponent implements OnInit {
   }  
 
   salvar() {
-    debugger;
     this.produto.dataCadastro = new Date();
     this.produto.status = "ATIVO"
     
@@ -51,7 +50,6 @@ export class ProdutoCreateComponent implements OnInit {
     retorna apenas numeros e ponto para formar valor de real
   */
   onKeypressEvent(event: any): boolean {
-    debugger;
     if ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)) {
       return true;
     }

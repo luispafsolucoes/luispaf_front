@@ -61,7 +61,6 @@ export class CidadeReadComponent implements OnInit {
   }  
 
   filtrar() {
-    debugger;
     if (this.cidadeSearch.nome || this.cidadeSearch.uf) {
       this.carregando = true;
       this.cidadeService.filtrarPage(this.getPageRequest("nome"), this.cidadeSearch).then((listagem: any)  => {

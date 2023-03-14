@@ -28,7 +28,6 @@ export class CidadeUpdateComponent implements OnInit {
   }
 
   getById(id: number) {
-    debugger;
     this.cidadeService.buscar(new Cidade(id, null, null)).then((listagem: any)  => {
       if (listagem && listagem.length > 0) {
         this.cidade = listagem[0];
@@ -54,12 +53,10 @@ export class CidadeUpdateComponent implements OnInit {
   }
 
   uperCaseAndTrim_nome(value: string) {
-    debugger;
     this.cidade.nome = value.trim().toUpperCase();
   }
 
   uperCaseAndTrim_uf(value: string) {
-    debugger;
     this.cidade.uf = value.trim().toUpperCase();
   }
 }

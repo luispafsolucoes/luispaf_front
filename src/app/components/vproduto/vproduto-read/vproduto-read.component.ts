@@ -74,6 +74,11 @@ export class VprodutoReadComponent  implements OnInit {
   
   listarPedidosDodia(status: string) {
     debugger;
+
+    if (!this.pedidoVendidoSearch.dataCriacao) {
+      this.pedidoVendidoSearch.dataCriacao = new Date();
+    }
+
     this.carregando = true;
     this.pedidoVendidoSearch.status = status;
     this.vprodutoService.listarPedidosDodia(this.getPageRequest("codpedidovendido"), this.pedidoVendidoSearch).then((listagem: any)  => {
@@ -92,8 +97,7 @@ export class VprodutoReadComponent  implements OnInit {
   }
 
   filtrar() {
-    debugger;
-    if (this.pedidoVendidoSearch.codigoCliente || this.pedidoVendidoSearch.status) {
+    if (this.pedidoVendidoSearch.codigoCliente || this.pedidoVendidoSearch.status ||this.pedidoVendidoSearch.dataCriacao) {
       this.listarPedidosDodia(this.pedidoVendidoSearch.status);
     } else {
       this.vprodutoService.showMessage("Informe ao menos um campo para a pesquisa!");

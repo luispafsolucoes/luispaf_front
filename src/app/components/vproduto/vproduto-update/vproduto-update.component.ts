@@ -80,14 +80,12 @@ export class VprodutoUpdateComponent implements OnInit {
   }
 
   finalizarVenda() {
-    debugger;
     this.pedidoVendido.status = "RECEBIDO";    
     this.pedidoVendido.dataFinalizacao = this.pedidoVendido.dataCriacao;
     this.salvarPedidoVendido(this.pedidoVendido);
   }
 
   salvarPedidoVendido(pedidoVendido: PedidoVendido) {
-    debugger;
     this.vprodutoService.salvar(pedidoVendido).then(resposta => { 
       this.router.navigate(['/vproduto']);
       this.produtoService.showMessage("Pedido finalizado com sucesso!");      
@@ -122,7 +120,6 @@ export class VprodutoUpdateComponent implements OnInit {
   }
 
   listarProdutosAtivos() {
-    debugger;
     this.produtoService.listarTodos().then((listagem: any)  => {
       if (listagem && listagem.length > 0) {
         this.produtos = listagem;

@@ -29,7 +29,6 @@ export class CaixaCreateComponent implements OnInit {
   }
 
   fecharCaixaDatasAnteriores($event) {
-    debugger;
     let caixa: Caixa = $event;
     caixa.dataFechamento = new Date();
     caixa.status = "FECHADO";

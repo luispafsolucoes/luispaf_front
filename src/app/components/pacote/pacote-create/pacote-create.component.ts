@@ -45,7 +45,6 @@ export class PacoteCreateComponent implements OnInit {
   }  
 
   listarProdutosAtivos() {
-    debugger;
     let produtoFind = new Produto();
     produtoFind.status = "ATIVO";
     this.produtoService.buscar(produtoFind).then((listagem: any)  => {
@@ -70,7 +69,6 @@ export class PacoteCreateComponent implements OnInit {
   }
   
   salvar() {
-    debugger;
     this.pacote.dataCriacao = new Date();
     this.pacote.status = "ATIVO"
     this.pacote.produtos = this.proutosSelecionados;
@@ -88,7 +86,6 @@ export class PacoteCreateComponent implements OnInit {
   }
 
   desabilitaValor(): boolean {
-    debugger;
     return true;
   }
 
@@ -101,7 +98,6 @@ export class PacoteCreateComponent implements OnInit {
   }
 
   adicionar() {
-    debugger;
     if (this.produtoSelecionado) {
       this.pacote.valor = this.pacote.valor ? Number(this.pacote.valor) + this.produtoSelecionado.valor :  this.produtoSelecionado.valor;
       this.proutosSelecionados.push(this.produtoSelecionado);
@@ -116,7 +112,6 @@ export class PacoteCreateComponent implements OnInit {
     retorna apenas numeros e ponto para formar valor de real
   */
     onKeypressEvent(event: any): boolean {
-      debugger;
       if ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)) {
         return true;
       }

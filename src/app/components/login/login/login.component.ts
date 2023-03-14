@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   } 
 
   logar() {
-    debugger;
     this.loginService.logar(this.usuario).then((usuario: Usuario)  => {
        this.localStorage.set('idUsuarioLogado', usuario.codigo);
        this.router.navigate(['/telaPrincipal']);

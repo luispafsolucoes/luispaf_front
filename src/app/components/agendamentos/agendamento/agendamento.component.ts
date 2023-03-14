@@ -31,12 +31,10 @@ export class AgendamentoComponent {
     ) {}
 
   ngOnInit(): void {
-    debugger;
     this.usuarioESenhaValidos();
     this.buscarClientesSearch(); 
     this.montarTiposProduto();
-    this.montarHorarios();
-    debugger;  
+    this.montarHorarios(); 
   } 
 
   usuarioESenhaValidos() {
@@ -47,7 +45,6 @@ export class AgendamentoComponent {
   }
 
   agendar() {
-    debugger;
     if (this.validaCampos(this.agenda)) {
       let usuario: Usuario = new Usuario();
       usuario.codigo = Number(localStorage.getItem("idUsuarioAgenda"));

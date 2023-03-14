@@ -78,7 +78,6 @@ export class PacoteReadComponent implements OnInit {
   }
 
   filtrar() {
-    debugger;
     if (this.pacoteSearch.nome || this.pacoteSearch.status) {
       this.carregando = true;
       this.pacoteService.filtrarPage(this.getPageRequest("nome"), this.pacoteSearch).then((listagem: any)  => {

@@ -22,7 +22,6 @@ export class CaixaService {
   }
 
   salvar(caixa: Caixa) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "salvar", caixa, {}).subscribe(
         ret => {
@@ -36,7 +35,6 @@ export class CaixaService {
   }
 
   fecharCaixaDiasAnteriores(caixa: Caixa) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "fecharCaixaDiasAnteriores", caixa, {}).subscribe(
         ret => {
@@ -50,7 +48,6 @@ export class CaixaService {
   }  
 
   public getTotalPacoteDoDia() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "totalPacoteDoDia").subscribe(
         (total: number) => {
@@ -64,7 +61,6 @@ export class CaixaService {
   }
 
   public getTotalprodutoDoDia() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "totalprodutoDoDia").subscribe(
         (total: number) => {
@@ -78,7 +74,6 @@ export class CaixaService {
   }
 
   public getTotalcaixaDoDia() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "totalcaixa").subscribe(
         (total: number) => {
@@ -92,7 +87,6 @@ export class CaixaService {
   }
 
   public getCaixasBertoDatasAnteriores() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "caixasBertoDatasAnteriores").subscribe(
         (caixas: Caixa[]) => {
@@ -106,7 +100,6 @@ export class CaixaService {
   }
 
   public getCaixaAbertoDoDia() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "caixaAbertoDoDia").subscribe(
         (caixa: Caixa) => {
@@ -120,7 +113,6 @@ export class CaixaService {
   }
 
   public fecharCaixaDoDia(caixa: Caixa) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "fecharCaixaDoDia", caixa, {}).subscribe(
         ret => {
@@ -134,7 +126,6 @@ export class CaixaService {
   }  
   
   public getDataAtual() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "getDataAtual").subscribe(
         (dataAtual: string) => {
@@ -146,6 +137,4 @@ export class CaixaService {
       );
     });
   }
-
-
 }

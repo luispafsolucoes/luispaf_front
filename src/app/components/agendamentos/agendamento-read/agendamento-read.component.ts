@@ -35,7 +35,6 @@ export class AgendamentoReadComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.usuarioLogado(); 
     this.filtrarAgendaDataAtual();
-    debugger;
   } 
 
   limparData() {
@@ -52,7 +51,6 @@ export class AgendamentoReadComponent implements OnInit {
   }
 
   filtrarPage(agenda: Agenda) {
-    debugger;
     this.agendamentoService.filtrarPage(this.getPageRequest("horario"), agenda).then((listagem: any)  => {
       if (listagem && listagem.content.length > 0) {
         this.agendados = listagem.content;

@@ -62,7 +62,6 @@ export class ClienteReadComponent implements OnInit {
   }
 
   filtrar() {
-    debugger;
     if (this.clienteSearch.nome || this.clienteSearch.telefone1 || this.clienteSearch.cpf) {
       this.carregando = true;
       this.clienteService.filtrarPage(this.getPageRequest("nome"), this.clienteSearch).then((listagem: any)  => {

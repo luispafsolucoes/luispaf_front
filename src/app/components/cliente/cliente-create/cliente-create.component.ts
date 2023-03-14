@@ -29,7 +29,6 @@ export class ClienteCreateComponent implements OnInit {
   }  
 
   listarCidade() {
-    debugger;
     this.cidadeService.listarTodos().then((listagem: any)  => {
       if (listagem && listagem.length > 0) {
         this.cidades = listagem;
@@ -42,7 +41,6 @@ export class ClienteCreateComponent implements OnInit {
   }
 
   salvar() {
-    debugger;
     if (this.clienteService.validarCampos(this.cliente)) {
       this.cliente.dataCadastro = new Date();
       this.clienteService.salvar(this.cliente).then(resposta => {  

@@ -36,7 +36,6 @@ export class PacoteService {
   }
 
     filtrarPage(queryBuilser: QueryBuilder, pacote: Pacote) {
-    debugger;
     const url = this.getUrlFiltroPage(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
@@ -118,7 +117,6 @@ export class PacoteService {
   }
 
   public listarPacotesAtivosOrdenadoPornome() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "listarPacotesAtivosOrdenadoPornome").subscribe(
         (listagem: any) => {

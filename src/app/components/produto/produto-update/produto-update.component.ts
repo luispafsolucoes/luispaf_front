@@ -29,7 +29,6 @@ export class ProdutoUpdateComponent implements OnInit {
   }
 
   getById(id: number) {
-    debugger;
     let produtoSearch: Produto =  new Produto();
     produtoSearch.codigo = id;
     this.produtoService.buscar(produtoSearch).then((listagem: any)  => {

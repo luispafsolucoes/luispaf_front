@@ -24,7 +24,6 @@ export class ClienteService {
   }
 
   salvar(cliente: Cliente) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "salvar", cliente, {}).subscribe(
         ret => {
@@ -38,7 +37,6 @@ export class ClienteService {
   }
 
   atualizar(cliente: Cliente) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "atualizar", cliente, {}).subscribe(
         ret => {
@@ -52,7 +50,6 @@ export class ClienteService {
   }
 
   listar(queryBuilser: QueryBuilder) {
-    debugger;
     const url = this.getUrl(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
@@ -60,7 +57,6 @@ export class ClienteService {
     return new Promise((retorno, erro) => {
       this.http.get(url).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -70,14 +66,12 @@ export class ClienteService {
   }
 
   filtrarPage(queryBuilser: QueryBuilder, entity: Cliente) {
-    debugger;
     const url = this.getUrlFiltroPage(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
     return new Promise((retorno, erro) => {
       this.http.post(url, entity, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -96,7 +90,6 @@ export class ClienteService {
   }
 
   buscar(cliente: Cliente) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "filtrar", cliente, {}).subscribe(
         (listagem: any) => {
@@ -110,7 +103,6 @@ export class ClienteService {
   }
 
   public deletar(id: number) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.delete( environment.baseUrl + this.PATH + id).subscribe(
         ret => {
@@ -124,7 +116,6 @@ export class ClienteService {
   }
 
   validarCampos(cliente: Cliente) {
-    debugger;
     if (!cliente.nome) {
       this.showMessage("Nome é obrigatório!");
       return false;
@@ -167,7 +158,6 @@ export class ClienteService {
 
    /*todos sem paginação usado para os select fields*/
    public listarTodos() {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.get(environment.baseUrl + this.PATH + "listar").subscribe(
         (listagem: any) => {

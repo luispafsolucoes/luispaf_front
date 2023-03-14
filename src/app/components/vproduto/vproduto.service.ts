@@ -23,7 +23,6 @@ export class VprodutoService {
   } 
 
   salvar(pedidoVendido: PedidoVendido) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "salvar", pedidoVendido, {}).subscribe(
         ret => {
@@ -43,7 +42,6 @@ export class VprodutoService {
     return new Promise((retorno, erro) => {
       this.http.post(url, entity, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -58,14 +56,12 @@ export class VprodutoService {
   }
 
   listarPedidosDodia(queryBuilser: QueryBuilder, entity: PedidoVendido) {
-    debugger;
     const url = this.getUrlListarPedidosDodia(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
     return new Promise((retorno, erro) => {
       this.http.post(url, entity, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {

@@ -24,7 +24,6 @@ export class RelatorioService {
 
 
   relatorioPorPeriodo(filtroDTO: FiltroDTO) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "relatorioPorPeriodo", filtroDTO, {}).subscribe(
        (ret: RelatorioPorPeriodoDTO)=> {

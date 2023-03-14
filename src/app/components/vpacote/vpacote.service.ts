@@ -24,7 +24,6 @@ export class VpacoteService {
   } 
 
   salvar(pacoteVendido: PacoteVendido) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "salvar", pacoteVendido, {}).subscribe(
         ret => {
@@ -44,7 +43,6 @@ export class VpacoteService {
     return new Promise((retorno, erro) => {
       this.http.post(url, entity, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {

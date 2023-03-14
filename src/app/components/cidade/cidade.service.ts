@@ -28,11 +28,9 @@ export class CidadeService {
   }
 
   buscar(cidade: Cidade) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "filtrar", cidade, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -43,14 +41,12 @@ export class CidadeService {
   }
 
   filtrarPage(queryBuilser: QueryBuilder, cidade: Cidade) {
-    debugger;
     const url = this.getUrlFiltroPage(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
     return new Promise((retorno, erro) => {
       this.http.post(url, cidade, {}).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -65,7 +61,6 @@ export class CidadeService {
   }
 
   listar(queryBuilser: QueryBuilder) {
-    debugger;
     const url = this.getUrl(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
@@ -73,7 +68,6 @@ export class CidadeService {
     return new Promise((retorno, erro) => {
       this.http.get(url).subscribe(
         (listagem: any) => {
-          debugger;
           retorno(listagem);
         },
         (error: any) => {
@@ -83,7 +77,6 @@ export class CidadeService {
   }
 
   salvar(cidade: Cidade) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.post(environment.baseUrl + this.PATH + "salvar", cidade, {}).subscribe(
         ret => {
@@ -97,7 +90,6 @@ export class CidadeService {
   }
 
   public deletar(id: number) {
-    debugger;
     return new Promise((retorno, erro) => {
       this.http.delete( environment.baseUrl + `cidade/${id}`).subscribe(
         ret => {

@@ -69,7 +69,6 @@ export class RelatorioReadComponent implements OnInit {
   }
 
   buscar() {
-    debugger;
     if (this.validaCampos(this.filtroDTO)) {
       this.relatorioService.relatorioPorPeriodo(this.filtroDTO).then((listagem: RelatorioPorPeriodoDTO[])  => {
         if (listagem && listagem.length > 0) {

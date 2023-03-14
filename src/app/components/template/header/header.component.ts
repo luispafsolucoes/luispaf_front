@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   } 
 
   usuarioLogado() {
-    debugger;
     if (localStorage.getItem("idUsuarioLogado") != null) {
       return true;
     } else {

@@ -24,7 +24,6 @@ export class ItemPacoteService {
 
 
   filtrarPage(queryBuilser: QueryBuilder, pacote: Pacote) {
-    debugger;
     const url = this.getUrlFiltroPage(queryBuilser.pageQuery.pageNumber, 
                             queryBuilser.pageQuery.pageSize, 
                             queryBuilser.sortQuery.property);
