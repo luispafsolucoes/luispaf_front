@@ -41,6 +41,7 @@ export class CaixaCreateComponent implements OnInit {
   }
 
   getTotalPacoteDoDia() {
+    debugger;
     this.caixaService.getTotalPacoteDoDia().then((total: number)  => {
       if (total >= 0) {
         this.caixa.totalPacote = total

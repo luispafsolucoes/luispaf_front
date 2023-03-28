@@ -47,26 +47,15 @@ export class CaixaService {
     });
   }  
 
-  public getTotalPacoteDoDia() {
-    return new Promise((retorno, erro) => {
-      this.http.get(environment.baseUrl + this.PATH + "totalPacoteDoDia").subscribe(
-        (total: number) => {
-          retorno(total);
-        },
-        (error: any) => {
-          erro(error.error);
-        }
-      );
-    });
-  }
-
   public getTotalprodutoDoDia() {
+    let caixa: Caixa = new Caixa();
+    caixa.dataAbertura = new Date();
     return new Promise((retorno, erro) => {
-      this.http.get(environment.baseUrl + this.PATH + "totalprodutoDoDia").subscribe(
+      this.http.post(environment.baseUrl + this.PATH + "totalprodutoDoDia", caixa).subscribe(
         (total: number) => {
           retorno(total);
         },
-        (error: any) => {
+        (error: any) => { 
           erro(error.error);
         }
       );
@@ -74,8 +63,25 @@ export class CaixaService {
   }
 
   public getTotalcaixaDoDia() {
+    let caixa: Caixa = new Caixa();
+    caixa.dataAbertura = new Date();
     return new Promise((retorno, erro) => {
-      this.http.get(environment.baseUrl + this.PATH + "totalcaixa").subscribe(
+      this.http.post(environment.baseUrl + this.PATH + "totalcaixa", caixa).subscribe(
+        (total: number) => {
+          retorno(total);
+        },
+        (error: any) => {
+          erro(error.error);
+        }
+      );
+    });
+  }
+
+  public getTotalPacoteDoDia() {
+    let caixa: Caixa = new Caixa();
+    caixa.dataAbertura = new Date();
+    return new Promise((retorno, erro) => {
+      this.http.post(environment.baseUrl + this.PATH + "totalPacoteDoDia", caixa).subscribe(
         (total: number) => {
           retorno(total);
         },
@@ -87,8 +93,11 @@ export class CaixaService {
   }
 
   public getCaixasBertoDatasAnteriores() {
+    debugger;
+    let caixa: Caixa = new Caixa();
+    caixa.dataAbertura = new Date();
     return new Promise((retorno, erro) => {
-      this.http.get(environment.baseUrl + this.PATH + "caixasBertoDatasAnteriores").subscribe(
+      this.http.post(environment.baseUrl + this.PATH + "caixasBertoDatasAnteriores", caixa).subscribe(
         (caixas: Caixa[]) => {
           retorno(caixas);
         },
@@ -100,8 +109,11 @@ export class CaixaService {
   }
 
   public getCaixaAbertoDoDia() {
+    debugger;
+    let caixa: Caixa = new Caixa();
+    caixa.dataAbertura = new Date();
     return new Promise((retorno, erro) => {
-      this.http.get(environment.baseUrl + this.PATH + "caixaAbertoDoDia").subscribe(
+      this.http.post(environment.baseUrl + this.PATH + "caixaAbertoDoDia", caixa).subscribe(
         (caixa: Caixa) => {
           retorno(caixa);
         },

@@ -33,8 +33,14 @@ export class RelatorioReadComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.usuarioLogado();
-    this.buscarClientesSearch();   
+    this.buscarClientesSearch(); 
+    this.inicioDto();  
   }  
+
+  inicioDto() {
+    this.filtroDTO.dataInicio = new Date();
+    this.filtroDTO.dataFim = new Date();
+  }
   
   limparFiltro() {
     this.filtroDTO =  new FiltroDTO();
