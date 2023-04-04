@@ -15,6 +15,7 @@ export class HomeComponent  implements OnInit {
 
   dataAtual: Date = new Date();
   dataAtualBack: string;
+  usuario: Usuario =  new Usuario();
 
   constructor(
     private localStorage: LocalStorageService,
@@ -24,8 +25,10 @@ export class HomeComponent  implements OnInit {
     private caixaService: CaixaService) {}
 
   ngOnInit(): void {
+    debugger;
     this.loginService.usuarioLogado();
     this.getDataAtual();
+    this.getUsuario();
   } 
 
   getDataAtual() {
@@ -34,5 +37,17 @@ export class HomeComponent  implements OnInit {
     }).catch(erro => {
       this.caixaService.showMessage("Falha ao buscar total pacote do dia!");
     });
+  }
+
+  getUsuario() {
+    debugger;
+    let usuarioFind: Usuario = new Usuario();
+    usuarioFind.codigo = Number(localStorage.getItem("idUsuarioLogado"));
+    this.loginService.getUsuario(usuarioFind).then((usuario: Usuario)  => {
+      this.usuario = usuario;
+    }).catch(erro => {
+      this.localStorage.clear();
+      this.loginService.showMessage(erro);
+    }); 
   }
 }

@@ -21,6 +21,7 @@ export class AgendamentoComponent {
   tiposProduto: string[] = [];
   horarios: string[] = [];
   agenda: Agenda = new Agenda();
+  usuarioLogado: Usuario = new Usuario();
 
   constructor(
     private router: Router,
@@ -31,11 +32,23 @@ export class AgendamentoComponent {
     ) {}
 
   ngOnInit(): void {
+    debugger;
     this.usuarioESenhaValidos();
+    this.getUsuarioLogado();
     this.buscarClientesSearch(); 
     this.montarTiposProduto();
     this.montarHorarios(); 
   } 
+
+  getUsuarioLogado() {
+    let usuario: Usuario = new Usuario();
+    usuario.codigo = Number(localStorage.getItem("idUsuarioAgenda"));
+    this.loginService.getUsuario(usuario).then((usuario: Usuario)  => {
+      this.usuarioLogado = usuario;
+    }).catch(erro => {
+      this.agendamentoService.showMessage(erro);
+    });
+  }
 
   usuarioESenhaValidos() {
     if (localStorage.getItem("idUsuarioAgenda") == null) {
@@ -68,8 +81,12 @@ export class AgendamentoComponent {
   }
 
   sair() {
-    this.localStorage.clear();
-    this.router.navigate(['/login']);
+    this.loginService.deslogar(this.usuarioLogado).then((usuario: Usuario)  => {
+      this.localStorage.clear();
+      this.router.navigate(['/login']);
+    }).catch(erro => {
+      this.agendamentoService.showMessage(erro);
+    });    
   }
 
   montarHorarios() {
